@@ -30,3 +30,9 @@
 
 
 # Задание 2
+Диаграмма расположена в корневой директории проекта, а также доступна по ссылке:
+https://app.diagrams.net/#G1mge8DeePTF4yF9_mFBmZ0NiBCQL0KfuY#%7B"pageId"%3A"XxKO-HE478FiYcosTdMO"%7D
+
+или
+
+https://drive.google.com/file/d/1mge8DeePTF4yF9_mFBmZ0NiBCQL0KfuY/view?usp=sharing
