@@ -37,26 +37,64 @@ services:
       - 3001:3000
     healthcheck:
       interval: 10s
-      timeout: 2s 
-      start_period: 15s 
-      retries: 5 
+      timeout: 2s
+      start_period: 15s
+      retries: 5
       test: node healthcheck.js
 
-  frontend-test:
+  frontend-auth-test:
     build:
-      context: frontend
-      dockerfile: ../Dockerfile.frontend
+      context: frontend/microfrontend/auth
+      dockerfile: ../../../Dockerfile.frontend
     command: yarn test:microfrontend
     restart: 'no'
     environment:
           CI: true
 
-  frontend:
+  frontend-auth:
     build:
-      context: frontend
-      dockerfile: ../Dockerfile.frontend
+      context: frontend/microfrontend/auth
+      dockerfile: ../../../Dockerfile.frontend
     ports:
       - 3000:3000
+    depends_on:
+      backend:
+        condition: service_healthy
+
+  frontend-profile-test:
+    build:
+      context: frontend/microfrontend/profile
+      dockerfile: ../../../Dockerfile.frontend
+    command: yarn test:microfrontend
+    restart: 'no'
+    environment:
+          CI: true
+
+  frontend-profile:
+    build:
+      context: frontend/microfrontend/profile
+      dockerfile: ../../../Dockerfile.frontend
+    ports:
+      - 3002:3000
+    depends_on:
+      backend:
+        condition: service_healthy
+
+  frontend-photos-test:
+    build:
+      context: frontend/microfrontend/photos
+      dockerfile: ../../../Dockerfile.frontend
+    command: yarn test:microfrontend
+    restart: 'no'
+    environment:
+          CI: true
+
+  frontend-photos:
+    build:
+      context: frontend/microfrontend/photos
+      dockerfile: ../../../Dockerfile.frontend
+    ports:
+      - 3003:3000
     depends_on:
       backend:
         condition: service_healthy
