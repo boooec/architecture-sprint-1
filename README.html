@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&Zcy;&acy;&dcy;&acy;&ncy;&icy;&iecy; 1</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="задание-1">Задание 1</h1>
+<h3 id="ознакомление-с-кодом-проекта">Ознакомление с кодом проекта</h3>
+<p>Абсолютное большинство <code>.js</code> файлов директории frontend расположено в <code>src/components</code> и <code>src/utils</code>, а точка входа – файл <code>src/index.js</code>.
+components:
+utils:</p>
+<p>blocks - .css files
+images - .svg files (images)</p>
+<p>Всё приложение располагается в функции App файла <code>src/components/App.js</code></p>
+<h3 id="проблемы-текущего-решения">Проблемы текущего решения:</h3>
+<p>Монолитная структура:</p>
+<ul>
+<li>Все компоненты связаны между собой, что затрудняет разработку и масштабирование.</li>
+<li>Изменение одной части системы часто затрагивает другие, что приводит к сложностям при тестировании и развертывании.</li>
+</ul>
+<p>Сложности с поддержкой и обновлением:</p>
+<ul>
+<li>Обновление системы требует полной пересборки и развертывания всего приложения.</li>
+<li>Командам трудно работать параллельно над разными частями приложения без конфликтов.</li>
+</ul>
+<p>Медленная разработка и развертывание:</p>
+<ul>
+<li>Каждый новый релиз требует длительных проверок из-за тесной связи компонентов.</li>
+<li>Высокий риск ошибок при внесении изменений.</li>
+</ul>
+<hr>
+<h3 id="2-преимущества-дробления-на-микрофронтенды">2. Преимущества дробления на микрофронтенды</h3>
+<h4 id="1-ускорение-разработки-и-обновлений">1. <strong>Ускорение разработки и обновлений</strong></h4>
+<ul>
+<li>Независимые микрофронтенды позволяют быстрее выпускать обновления без риска затронуть другие части системы.</li>
+<li>Команды могут работать параллельно над разными модулями, минимизируя зависимости.</li>
+</ul>
+<h4 id="2-гибкость-и-масштабируемость">2. <strong>Гибкость и масштабируемость</strong></h4>
+<ul>
+<li>Легко добавлять или изменять функционал без остановки всего приложения.</li>
+<li>Проще масштабировать конкретные модули в зависимости от нагрузки.</li>
+</ul>
+<h4 id="3-повышение-стабильности-и-надежности">3. <strong>Повышение стабильности и надежности</strong></h4>
+<ul>
+<li>Отказ одного микрофронтенда не приводит к падению всего приложения.</li>
+<li>Модули изолированы, что снижает влияние ошибок и упрощает тестирование.</li>
+</ul>
+<h4 id="4-оптимизация-производительности">4. <strong>Оптимизация производительности</strong></h4>
+<ul>
+<li>Ленивая загрузка модулей снижает время загрузки приложения.</li>
+<li>Общие компоненты загружаются только один раз и переиспользуются между модулями.</li>
+</ul>
+<hr>
+<h4 id="3-обоснование-выбранных-технологий">3. Обоснование выбранных технологий</h4>
+<h5 id="react">React</h5>
+<p>React выбран как основной фреймворк для микрофронтендов по следующим причинам:</p>
+<ul>
+<li><strong>Экспертиза команды</strong>: Предположим что имеем слаженную команду React разработчиков, выбор моно-фреймворка на текущем этапе повысит скорость разработки и качество/безопасноть решения.</li>
+<li><strong>Широкая экосистема</strong>: Доступ к большому числу библиотек и готовых решений.</li>
+<li><strong>Компонентный подход</strong>: Упрощает создание и переиспользование UI-компонентов.</li>
+</ul>
+<h5 id="паттерн-module-federation">Паттерн: <strong>Module Federation</strong></h5>
+<p>Использование <strong>Module Federation</strong> обеспечивает:</p>
+<ul>
+<li><strong>Независимое развертывание</strong>: Каждый модуль можно обновлять и разворачивать независимо.</li>
+<li><strong>Шаринг зависимостей</strong>: Общие библиотеки не дублируются между модулями.</li>
+<li><strong>Динамическая загрузка</strong>: Загружаются только необходимые компоненты, что ускоряет время загрузки.</li>
+</ul>
+<hr>
+<h4 id="проектирование-микрофтонтендов">Проектирование микрофтонтендов</h4>
+<p>Для проекта Mesto мы применили подход <strong>Domain-Driven Design (DDD)</strong> и выделили следующие домены/микроприложения:</p>
+<table>
+<thead>
+<tr>
+<th>Модуль</th>
+<th>Описание</th>
+<th>Каталог/Репозиторий</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Авторизация (Auth)</strong></td>
+<td>Управление входом, регистрацией и сессиями</td>
+<td><code>auth/</code></td>
+</tr>
+<tr>
+<td><strong>Профиль (Profile)</strong></td>
+<td>Создание и редактирование профиля</td>
+<td><code>profile/</code></td>
+</tr>
+<tr>
+<td><strong>Фото-менеджмент (Photos)</strong></td>
+<td>Загрузка и удаление фотографий</td>
+<td><code>photos/</code></td>
+</tr>
+<tr>
+<td><strong>Лайки (Likes)</strong></td>
+<td>Учёт и отображение лайков</td>
+<td><code>likes/</code></td>
+</tr>
+<tr>
+<td><strong>Агрегация (Root)</strong></td>
+<td>Объединение микрофронтендов в единое приложение</td>
+<td><code>root/</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p><strong>Авторизация (Auth):</strong>
+Включает логику регистрации, входа, выхода и управление сессиями. Модуль выделен для обеспечения безопасности и переиспользования в других приложениях.</p>
+</li>
+<li>
+<p><strong>Профиль (Profile):</strong>
+Отвечает за управление личными данными пользователя. Отдельный микрофронтенд упрощает разработку и интеграцию с другими сервисами.</p>
+</li>
+<li>
+<p><strong>Фото-менеджмент (Photos):</strong>
+Содержит функционал загрузки и удаления фотографий. Выделен для улучшения масштабируемости и независимого развития.</p>
+</li>
+<li>
+<p><strong>Лайки (Likes):</strong>
+Управляет лайками и статистикой. Разделение позволяет переиспользовать логику в других проектах.</p>
+</li>
+<li>
+<p><strong>Root-приложение:</strong>
+Связывает все микрофронтенды, отвечает за маршрутизацию и общие состояния.</p>
+</li>
+</ol>
+<p>Также нагрузка на бекенд авторизации, статистики, работы с фоотографиями обычно довольно велика,и этод подход позволит выделить все (в том числе и бекенды в будущем) в отдельные изолированные сервисы.</p>
+<h4 id="выбор-методов-взаимодействия-микрофтонтендов">Выбор методов взаимодействия микрофтонтендов</h4>
+<p>В качестве способа коммуникации был выбран Rest API подход, как наиболее простой и понятный способ для внедрения.
+REST API обеспечивает модульную структуру и изоляцию логики, легко настраивается благодаря стандартным HTTP-запросам, поддерживает совместимость с другими сервисами и упрощает масштабирование, устраняя зависимости от состояния в браузере.</p>
+<hr>
+<h4 id="планирование-процесса-разработки">Планирование процесса разработки:</h4>
+<p>Так как проект обучающий, и команда гипотетическая, план будет сформирован без учета временных затрат:
+Считаю правильным разбить разработку на 3 этапа:</p>
+<ol>
+<li>Подготовка и планирование:
+<ul>
+<li>Создание репозиториев, инфраструктуры</li>
+<li>Описание контрактов и взаимодействий (UML) для разработчиков</li>
+<li>Распределение разработчиков по модулям, так как контракты разработаны и модули изолированы</li>
+</ul>
+</li>
+<li>Разработка
+<ul>
+<li>Создание базовых версий микрофронтендов, c минимальной фукнциональностью(заглушек)</li>
+<li>Настройка Module Federation</li>
+<li>Разработка основного функционала модулей (разработка модулей ведется параллельно разными разработчиками)</li>
+<li>Интеграция и проверка Rest API для обмена данными между модулями, возможно уточнение контрактов</li>
+</ul>
+</li>
+<li>Тестирование и развертывание:
+<ul>
+<li>Разработка интеграционных тестов для проверки взаимодействия модулей</li>
+<li>Настройка CI/CD</li>
+</ul>
+</li>
+</ol>
+
+            
+            
+        </body>
+        </html>
